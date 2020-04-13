@@ -72,9 +72,32 @@ nav.togglenav .logo,
 .icons i{
     padding: 10px;
 }
-/*.icons .fa-bars{
+/*  START responsive menu icon*/
+.icons .menu-icon{
+    cursor: pointer;
     display: none;
-}*/
+}
+.icons .menu-icon div{
+    width: 24px;
+    height: 3px;
+    background-color: #F0F8FF;
+    margin: 4px;
+    border-radius: 25%;
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,5px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-5px);
+}
+nav.togglenav .menu-icon div{
+    background: black;
+    border-radius: 25%;
+}
+/*  END responsive menu icon*/
 .content{
     width: 50%;
     position: absolute;
@@ -104,13 +127,7 @@ nav.togglenav .logo,
 .content .btn:hover{
     background-color: rgb(2, 175, 146);
 }
-.burger{
-    padding-left: 10px; 
-    font-weight: bold; 
-    font-size: 20px;
-    cursor: pointer;
-    display: none;
-}
+
 /*Responsive*/
 @media screen and (max-width: 1200px) {
     .content h1{
@@ -128,32 +145,53 @@ nav.togglenav .logo,
     .box-1 nav{
         justify-content: space-between;
     }
+    .box-1 nav ul{
+        width: 100%;
+        color: black;
+    }
+    .box-1 nav ul li a{
+        color: black;
+        letter-spacing: 1px;
+    }
     .content h1{
         font-size: 22px;
     }
     .content p{
         font-size: x-small;
     }
-    .icons {
+
+    .ul-links{
+        width: 100%;
+        position: absolute;
+        height: 90vh;
+        top: 10vh;
+        background: white;
+        color: black;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(100%);
+        transition: transform 0.5s ease-in-out;
     }
-    /*.icons .fa-bars{
-        display: block;
-        cursor: pointer;
-        font-size: 20px;
-    }*/
-    .burger{
-        display: block;
+    .nav-links{
+        opacity: 0px;
     }
-    .box-1 nav ul{
-        display: none;
+    .icons{
+        display: flex;
+        align-items: center;
+    }
+    .icons .menu-icon{
+        display: block;
+        padding-left: 5px;
     }
     nav.togglenav{
         justify-content: space-around;
     }
 }
 
+.nav-active{
+    transform: translateY(0%);
+}
 
 
 /* Second Section (( ABOUT US )) */
